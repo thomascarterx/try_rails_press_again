@@ -17,8 +17,9 @@
 # Ignore emacs backup files
 *~
 env_vars
-notes.*txt
+notes.txt
 tree*txt
+wp_files/logger/myLog.log
 
 # for Maven projects
 *class
