@@ -20,7 +20,7 @@ env_vars
 notes.txt
 tree*txt
 wp_files/logger/myLog.log
-
+notes/*
 # for Maven projects
 *class
 *jar
