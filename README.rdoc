@@ -1,5 +1,10 @@
 == Welcome to Rails
 
+This is a port of WordPress to Rails.   
+
+The WordPress schema is 3.5.1.   
+
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
