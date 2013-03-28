@@ -6,6 +6,26 @@
  * @package WordPress
  */
 
+  require_once('/home/ericm/public_html/logger/Logger.php');
+Logger::configure('/home/ericm/public_html/logger/config.xml');
+	$ekmlog = Logger::getLogger('myLogger');
+
+
+ //if ( !function_exists('ekm_wp_log') ) :
+ function ekm_wp_log($message = '') {
+Logger::configure('/home/ericm/public_html/logger/config.xml');
+
+    // Fetch a logger, it will inherit settings from the root logger
+     $ekmlog = Logger::getLogger('myLogger');
+     // $myText = (string)$message;    
+$ekmlog->info($message);
+    // Start logging
+        
+    // $ekmlog->info("My third message  in pluggable."); // Not logged because INFO < WARN
+
+}
+// endif;
+
 if ( !function_exists('wp_set_current_user') ) :
 /**
  * Changes the current user by ID or name.
@@ -468,6 +488,9 @@ if ( !function_exists('wp_authenticate') ) :
  * @return WP_Error|WP_User WP_User object if login successful, otherwise WP_Error object.
  */
 function wp_authenticate($username, $password) {
+	 ekm_wp_log("in wp_authenticate");
+// $ekmlog->info("in wp_authenticate")
+   
 	$username = sanitize_user($username);
 	$password = trim($password);
 

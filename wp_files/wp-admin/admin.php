@@ -6,29 +6,29 @@
  * @subpackage Administration
  */
 
-    include('../logger/Logger.php');
+     require_once('../logger/Logger.php');
     
-    $logger = Logger::getLogger("main");
-    $logger->info("This is an informational message.");
-    $logger->warn("I'm not feeling so good...");
+    // $logger = Logger::getLogger("main");
+    // $logger->info("This is an informational message.");
+    // $logger->warn("I'm not feeling so good...");
 
 
     // Insert the path where you unpacked log4php
     
      
     // Tell log4php to use our configuration file.
-    Logger::configure('../logger/config.xml');
+     Logger::configure('../logger/config.xml');
      
     // Fetch a logger, it will inherit settings from the root logger
-    $log = Logger::getLogger('myLogger');
+     $log = Logger::getLogger('myLogger');
      
     // Start logging
-    $log->trace("My first message."); // Not logged because TRACE < WARN
-    $log->debug("My second message."); // Not logged because DEBUG < WARN
-    $log->info("My third message."); // Not logged because INFO < WARN
-    $log->warn("My fourth message."); // Logged because WARN >= WARN
-    $log->error("My fifth message."); // Logged because ERROR >= WARN
-    $log->fatal("My sixth message."); // Logged because FATAL >= WARN
+     $log->trace("My first message."); // Not logged because TRACE < WARN
+     $log->debug("My second message."); // Not logged because DEBUG < WARN
+     $log->info("My third message."); // Not logged because INFO < WARN
+     $log->warn("My fourth message."); // Logged because WARN >= WARN
+     $log->error("My fifth message."); // Logged because ERROR >= WARN
+     $log->fatal("My sixth message."); // Logged because FATAL >= WARN
 
 /**
  * In WordPress Administration Screens
